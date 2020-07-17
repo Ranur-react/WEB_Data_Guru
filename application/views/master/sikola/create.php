@@ -32,7 +32,7 @@
 					<span class="error telp text-red"></span>
 				</div>
 
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label>Jml.Guru Honorer</label>
 					<input type="text" name="jmlhonor" class="form-control">
 					<span class="error jmlhonor text-red"></span>
@@ -42,7 +42,7 @@
 					<label>Jml.Guru PNS</label>
 					<input type="text" name="jmlpns" class="form-control">
 					<span class="error jmlpns text-red"></span>
-				</div>
+				</div> -->
 
 				<div class="form-group">
 					<label>Jml.Siswa Laki-Laki</label>

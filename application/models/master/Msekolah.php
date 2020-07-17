@@ -16,8 +16,8 @@ class Msekolah extends CI_Model
 			'nama_sekolah'   => $params['nama'],
 			'alamat_sekolah'   => $params['alamat'],
 			'telp_sekolah'   => $params['telp'],
-			'jml_guru_honor'   => $params['jmlhonor'],
-			'jml_guru_pns'   => $params['jmlpns'],
+			// 'jml_guru_honor'   => $params['jmlhonor'],
+			// 'jml_guru_pns'   => $params['jmlpns'],
 			'jml_siswa_lk'   => $params['jmllk'],
 			'jml_siswa_pr'   => $params['jmlpr'],
 			'kode_lurah_sekolah'   => $params['kodelurah'],
@@ -29,6 +29,12 @@ class Msekolah extends CI_Model
 	{
 		return $this->db->where('kode_sekolah', $kode)->get($this->tabel)->row_array();
 	}
+
+		public function hitungpns($pm)
+	{
+		return $this->db->query("SELECT COUNT(`tb_guru`.`nip_guru`) as jumlahpns FROM `tb_guru` WHERE `tb_guru`.`kode_pegawai_guru`='PG-01' AND `tb_guru`.`kode_sekolah_guru`='SKL1';")->row_array();
+	}
+
 	public function update($params)
 	{
 		$kode = $params['kode'];
@@ -37,8 +43,8 @@ class Msekolah extends CI_Model
 			'nama_sekolah'   => $params['nama'],
 			'alamat_sekolah'   => $params['alamat'],
 			'telp_sekolah'   => $params['telp'],
-			'jml_guru_honor'   => $params['jmlhonor'],
-			'jml_guru_pns'   => $params['jmlpns'],
+			// 'jml_guru_honor'   => $params['jmlhonor'],
+			// 'jml_guru_pns'   => $params['jmlpns'],
 			'jml_siswa_lk'   => $params['jmllk'],
 			'jml_siswa_pr'   => $params['jmlpr'],
 			'kode_lurah_sekolah'   => $params['kodelurah'],

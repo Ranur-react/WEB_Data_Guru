@@ -16,7 +16,8 @@ class Sekolah extends CI_Controller
 			'page'  => 'Data Sekolah',
 			'small' => 'List data Data Sekolah',
 			'urls'  => '<li class="active">Data Sekolah</li>',
-			'data'  => $this->Msekolah->getall()
+			'data'  => $this->Msekolah->getall(),
+			'dataX'  => $this->Msekolah->hitungpns(''),
 		];
 		$this->template->display('master/sikola/index', $data);//panggil dari view
 	}
@@ -33,8 +34,8 @@ class Sekolah extends CI_Controller
 			$this->form_validation->set_rules('nama', 'Nama Sekolah', 'required');
 			$this->form_validation->set_rules('alamat', 'Alamat Sekolah', 'required');
 			$this->form_validation->set_rules('telp', 'Telpon Sekolah', 'required');
-			$this->form_validation->set_rules('jmlhonor', 'Jumlah Guru Honor', 'required');
-			$this->form_validation->set_rules('jmlpns', 'Jumlah Guru PNS', 'required');
+			// $this->form_validation->set_rules('jmlhonor', 'Jumlah Guru Honor', 'required');
+			// $this->form_validation->set_rules('jmlpns', 'Jumlah Guru PNS', 'required');
 			$this->form_validation->set_rules('jmllk', 'Jumlah Siswa Laki-Laki', 'required');
 			$this->form_validation->set_rules('jmlpr', 'Jumlah Siswi Perempuan', 'required');
 			$this->form_validation->set_rules('kodelurah', 'Kode Lurah', 'required');
