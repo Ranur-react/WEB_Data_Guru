@@ -20,7 +20,7 @@
 							<select class="form-control pangkat" name="pangkat">
 						<!-- <option value="">-- Pilih Pangkat --</option> -->
 						<?php foreach ($dpangkat as $d) : ?>
-							<option value="<?= $d['kode_golongan']; ?>"><?=$d['kode_pangkat']; ?></option>
+							<option value="<?= $d['kode_pangkat']; ?>"><?=$d['pangkat_kode_golongan']; ?></option>
 						<?php endforeach; ?>
 					</select>
 						</div>

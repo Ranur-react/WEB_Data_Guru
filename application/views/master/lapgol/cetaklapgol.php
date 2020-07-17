@@ -34,7 +34,7 @@
 								<td width="40px"><?= $no . '.'; ?></td>
 								<td><?= $d['nip_guru'] ?></td>
 								<td><?= $d['nama_guru'] ?></td>
-								<td><?= $d['kode_pangkat'] ?></td>
+								<td><?= $d['pangkat_kode_golongan'] ?></td>
 								<td><?= $d['nama_golongan'] ?></td>
 								
 									

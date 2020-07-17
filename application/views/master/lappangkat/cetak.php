@@ -18,7 +18,7 @@
 	<table align="center" width="60%" border="0">
 	<tr>
 		<td width="20%">Pangkat</td>
-		<td align="right" width="20%">: <?= $dgolongan['pangkat']; ?></td>
+		<td align="right" width="20%">: <?= $dgolongan['pangkat_kode_golongan']; ?></td>
 		<td align="right" width="60%"> </td>
 	</tr>
 	<!-- 	<tr>
