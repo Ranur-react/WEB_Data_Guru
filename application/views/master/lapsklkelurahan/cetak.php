@@ -58,8 +58,10 @@
 								<td><?= $d['nama_sekolah'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>
-								<td><?= $d['jml_guru_honor'] ?></td>
-								<td><?= $d['jml_guru_pns'] ?></td>
+								<?php $dhonor=$this->Msekolah->hitunghonor($d['kode_sekolah']) ?>
+								<?php $dpns=$this->Msekolah->hitungpns($d['kode_sekolah']) ?>
+								<td><?php echo $dhonor['jumlahpns']; ?></td>
+								<td><?php echo $dpns['jumlahpns']; ?></td>
 								<td><?= $d['jml_siswa_lk'] ?></td>
 								<td><?= $d['jml_siswa_pr'] ?></td>
 								
@@ -67,8 +69,8 @@
 								</td>
 							</tr>
 						<?php $no++;
-						$tothonor=$tothonor+$d['jml_guru_honor'];
-						$totpns=$totpns+$d['jml_guru_pns'];
+						$tothonor=$tothonor+$dhonor['jumlahpns']; 
+						$totpns=$totpns+$dpns['jumlahpns'];
 						$totlk=$totlk+$d['jml_siswa_lk'];
 						$totpr=$totpr+$d['jml_siswa_pr'];
 						} ?>

@@ -17,7 +17,7 @@ class Sekolah extends CI_Controller
 			'small' => 'List data Data Sekolah',
 			'urls'  => '<li class="active">Data Sekolah</li>',
 			'data'  => $this->Msekolah->getall(),
-			'dataX'  => $this->Msekolah->hitungpns(''),
+			// 'dataX'  => ,
 		];
 		$this->template->display('master/sikola/index', $data);//panggil dari view
 	}

@@ -7,6 +7,8 @@ class Lapsekolah extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('master/Mlapsekolah');
+		$this->load->model('master/Msekolah');
+		
 	}
 	public function index()
 	{

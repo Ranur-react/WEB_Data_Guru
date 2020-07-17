@@ -32,8 +32,10 @@
 								<td><?= $d['nama_sekolah'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>
-								<td><!-- <?= $d['jml_guru_pns'] ?> --></td>
-								<td><?php echo $dataX['jumlahpns']; ?></td>
+								<?php $dhonor=$this->Msekolah->hitunghonor($d['kode_sekolah']) ?>
+								<?php $dpns=$this->Msekolah->hitungpns($d['kode_sekolah']) ?>
+								<td><?php echo $dhonor['jumlahpns']; ?></td>
+								<td><?php echo $dpns['jumlahpns']; ?></td>
 								<td><?= $d['jml_siswa_lk'] ?></td>
 								<td><?= $d['jml_siswa_pr'] ?></td>
 								<td><?= $d['kode_lurah_sekolah'] ?></td>

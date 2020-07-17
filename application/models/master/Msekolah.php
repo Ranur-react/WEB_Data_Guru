@@ -32,8 +32,14 @@ class Msekolah extends CI_Model
 
 		public function hitungpns($pm)
 	{
-		return $this->db->query("SELECT COUNT(`tb_guru`.`nip_guru`) as jumlahpns FROM `tb_guru` WHERE `tb_guru`.`kode_pegawai_guru`='PG-01' AND `tb_guru`.`kode_sekolah_guru`='SKL1';")->row_array();
+		return $this->db->query("SELECT COUNT(`tb_guru`.`nip_guru`) as jumlahpns FROM `tb_guru` WHERE `tb_guru`.`kode_pegawai_guru`='PG-01' AND `tb_guru`.`kode_sekolah_guru`='$pm';")->row_array();
 	}
+
+	public function hitunghonor($pm)
+	{
+		return $this->db->query("SELECT COUNT(`tb_guru`.`nip_guru`) as jumlahpns FROM `tb_guru` WHERE `tb_guru`.`kode_pegawai_guru`='PG-02' AND `tb_guru`.`kode_sekolah_guru`='$pm';")->row_array();
+	}
+
 
 	public function update($params)
 	{

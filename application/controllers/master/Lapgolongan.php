@@ -16,6 +16,7 @@ class Lapgolongan extends CI_Controller
 			'small' => 'List Laporan Data Pangkat dan Golongan Guru',
 			'urls'  => '<li class="active">Laporan Data Pangkat dan Golongan Guru</li>',
 			'data'  => $this->Mlapgol->tampildata()
+			'data'  => $this->Mlapgol->tampildata()
 		];
 		$this->template->display('master/lapgol/index', $data);//panggil dari view
 	}
