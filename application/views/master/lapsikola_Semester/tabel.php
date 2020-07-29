@@ -1,14 +1,3 @@
-<div class="row">
-	<div class="col-xs-12">
-		<div class="box">
-			<div class="box-header with-border">
-				<a href="<?= site_url('master/Lapsekolah/cetak') ?>" class="btn bg-aqua"><i class="fa fa-print">Cetak Laporan</i></a>
-				<a href="<?= site_url('Home') ?>" class="btn bg-yellow"><i class="fa fa-backward">Kembali</i></a>
-
-				<center><h2><b>Laporan Data Sekolah</b></h2></center>
-				<center><h4><b>Kecamatan Padang Timur</b></h4></center>
-				<center><h4><b>Kota Padang</b></h4></center>
-			</div>
 			<div class="box-body table-responsive">
 				<?= $this->session->flashdata('pesan'); ?>
 				<table class="table table-bordered table-striped">
@@ -79,9 +68,3 @@
 					</tfoot>
 				</table>
 			</div>
-		</div>
-	</div>
-</div>
-
-<div id="tampil_modal"></div>
-

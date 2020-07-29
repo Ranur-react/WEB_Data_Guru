@@ -19,6 +19,11 @@
 					<input type="text" name="nama" class="form-control">
 					<span class="error nama text-red"></span>
 				</div>
+				<div class="form-group">
+					<label>Nama Kepala Sekolah</label>
+					<input type="text" name="nama_kepsek" class="form-control">
+					<span class="error nama_kepsek text-red"></span>
+				</div>
 
 				<div class="form-group">
 					<label>Alamat Sekolah</label>
@@ -30,30 +35,6 @@
 					<label>Telp Sekolah</label>
 					<input type="text" name="telp" class="form-control">
 					<span class="error telp text-red"></span>
-				</div>
-
-				<!-- <div class="form-group">
-					<label>Jml.Guru Honorer</label>
-					<input type="text" name="jmlhonor" class="form-control">
-					<span class="error jmlhonor text-red"></span>
-				</div>
-
-				<div class="form-group">
-					<label>Jml.Guru PNS</label>
-					<input type="text" name="jmlpns" class="form-control">
-					<span class="error jmlpns text-red"></span>
-				</div> -->
-
-				<div class="form-group">
-					<label>Jml.Siswa Laki-Laki</label>
-					<input type="text" name="jmllk" class="form-control">
-					<span class="error jmllk text-red"></span>
-				</div>
-
-				<div class="form-group">
-					<label>Jml.Siswi Perempuan</label>
-					<input type="text" name="jmlpr" class="form-control">
-					<span class="error jmlpr text-red"></span>
 				</div>
 
 				<div class="form-group">

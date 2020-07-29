@@ -23,7 +23,6 @@
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kode_sekolah" name="kode_sekolah">
-						<option value="">-- Pilih Kode Sekolah --</option>
 						<?php foreach ($dsikola as $d) : ?>
 							<option value="<?= $d['kode_sekolah']; ?>"><?=$d['kode_sekolah']; ?>-<?=$d['nama_sekolah']; ?></option>
 						<?php endforeach; ?>
@@ -32,7 +31,6 @@
 
 						<div class="form-group">
 							<select class="form-control status_pegawai" name="status_pegawai">
-						<option value="">-- Pilih Status Kepegawaian --</option>
 						<?php foreach ($dpegawai as $d) : ?>
 							<option value="<?= $d['status_pegawai']; ?>"><?=$d['status_pegawai']; ?></option>
 						<?php endforeach; ?>
@@ -55,13 +53,19 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lapstatuspegawaiskl/tabel')  ?>',
+		$('.status_pegawai').select2();
+		$('.kode_sekolah').select2();
+
+let kode= "&a=" +$('.status_pegawai').val()+"&b=" +$('.kode_sekolah').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lapstatuspegawaiskl/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	// alert("Golongan harus dipilih");
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
 

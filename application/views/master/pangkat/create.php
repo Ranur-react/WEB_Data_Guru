@@ -17,12 +17,7 @@
 
 				<div class="form-group">
 					<label>Nama Pangkat</label>
-					<select class="form-control" name="kodegolongan">
-						<option value="">-- Pilih Golongan --</option>
-						<?php foreach ($dgolongan as $d) : ?>
-							<option value="<?= $d['kode_golongan']; ?>"><?= $d['kode_golongan']."-".  $d['nama_golongan']; ?></option>
-						<?php endforeach; ?>
-					</select>
+					<input type="text" name="kodegolongan" class="form-control">
 					<span class="error kodegolongan text-red"></span>
 				</div>
 

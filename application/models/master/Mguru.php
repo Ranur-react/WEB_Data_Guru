@@ -30,6 +30,12 @@ class Mguru extends CI_Model
 			// 'nip_lama_guru'   => $params['niplama'],
 			'nama_diklat_guru'   => $params['namadiklat'],
 			'thn_diklat_guru'   => $params['thndiklat'],
+			'nama_diklat_guru2'   => $params['namadiklat2'],
+			'thn_diklat_guru2'   => $params['thndiklat2'],
+			'nama_diklat_guru3'   => $params['namadiklat3'],
+			'thn_diklat_guru3'   => $params['thndiklat3'],
+
+
 			'kode_sekolah_guru'   => $params['kodesekolah'],
 			'kode_jenis_guru'   => $params['kodejenisguru'],
 			'no_sk_guru'   => $params['nosk'],

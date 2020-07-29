@@ -22,8 +22,8 @@
 		<td align="right" width="60%"> </td>
 	</tr>
 		<tr>
-		<td width="20%">Kode Lurah</td>
-		<td align="right" width="20%">: <?= $dpangkat['kode_pangkat']; ?></td>
+		<td width="20%">Pangkat</td>
+		<td align="right" width="20%">: <?= $dpangkat['pangkat_kode_golongan']; ?></td>
 		<td align="right" width="60%"> </td>
 	</tr>
 </table>

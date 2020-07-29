@@ -23,7 +23,6 @@
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kode_lurah" name="kode_lurah">
-						<option value="">-- Pilih Kode Kelurahan --</option>
 						<?php foreach ($dlurah as $d) : ?>
 							<option value="<?= $d['kode_lurah']; ?>"><?=$d['kode_lurah']; ?>-<?=$d['nama_lurah']; ?></option>
 						<?php endforeach; ?>
@@ -32,9 +31,8 @@
 
 						<div class="form-group">
 							<select class="form-control kode_golongan" name="kode_golongan">
-						<option value="">-- Pilih Golongan --</option>
 						<?php foreach ($dgolongan as $d) : ?>
-							<option value="<?= $d['kode_golongan']; ?>"><?=$d['kode_golongan']; ?></option>
+							<option value="<?= $d['kode_golongan']; ?>"><?=$d['nama_golongan']; ?></option>
 						<?php endforeach; ?>
 					</select>
 						</div>
@@ -54,13 +52,19 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lapgollurah/tabel')  ?>',
+		$('.kode_lurah').select2();
+		$('.kode_golongan').select2();
+
+	let kode= "&a=" +$('.kode_lurah').val()+"&b=" +$('.kode_golongan').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lapgollurah/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	// alert("Golongan harus dipilih");
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
 

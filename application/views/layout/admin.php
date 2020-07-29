@@ -78,7 +78,11 @@
 							Laporan Data Sekolah
 					</a>
 				</li>
-
+				<li class="<?= $urls == "Room" ? "active" : null ?>">
+					<a href="<?= site_url('Lapsekolah_Semester') ?>"><i class="fa fa-file-text"></i>
+							Laporan Data Sekolah Per Semester
+					</a>
+				</li>
 				<li class="<?= $urls == "Room" ? "active" : null ?>">
 					<a href="<?= site_url('lapsklkelurahan') ?>"><i class="fa fa-file-text"></i>
 							Laporan Data Sekolah per Kelurahan

@@ -25,7 +25,7 @@
 							<select class="form-control kodegol" name="kodegol">
 						<!-- <option value="">-- Pilih Nama Golongan --</option> -->
 						<?php foreach ($dgolongan as $d) : ?>
-							<option value="<?= $d['kode_golongan']; ?>"><?=$d['kode_golongan']; ?></option>
+							<option value="<?= $d['kode_golongan']; ?>"><?=$d['nama_golongan']; ?></option>
 						<?php endforeach; ?>
 					</select>
 						</div>
@@ -46,6 +46,8 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
+		$('.kodegol').select2();
+		
 	let kode= "&a=" +$('.kodegol').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lapberdasarkangol/tabel_kode')  ?>',

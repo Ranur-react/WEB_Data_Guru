@@ -36,8 +36,8 @@ class Sekolah extends CI_Controller
 			$this->form_validation->set_rules('telp', 'Telpon Sekolah', 'required');
 			// $this->form_validation->set_rules('jmlhonor', 'Jumlah Guru Honor', 'required');
 			// $this->form_validation->set_rules('jmlpns', 'Jumlah Guru PNS', 'required');
-			$this->form_validation->set_rules('jmllk', 'Jumlah Siswa Laki-Laki', 'required');
-			$this->form_validation->set_rules('jmlpr', 'Jumlah Siswi Perempuan', 'required');
+			// $this->form_validation->set_rules('jmllk', 'Jumlah Siswa Laki-Laki', 'required');
+			// $this->form_validation->set_rules('jmlpr', 'Jumlah Siswi Perempuan', 'required');
 			$this->form_validation->set_rules('kodelurah', 'Kode Lurah', 'required');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong.');
 			$this->form_validation->set_message('is_unique', '%s sudah digunakan.');
@@ -69,10 +69,10 @@ class Sekolah extends CI_Controller
 			$this->form_validation->set_rules('nama', 'Nama Sekolah', 'required');
 			$this->form_validation->set_rules('alamat', 'Alamat Sekolah', 'required');
 			$this->form_validation->set_rules('telp', 'Telpon Sekolah', 'required');
-			$this->form_validation->set_rules('jmlhonor', 'Jumlah Guru Honor', 'required');
-			$this->form_validation->set_rules('jmlpns', 'Jumlah Guru PNS', 'required');
-			$this->form_validation->set_rules('jmllk', 'Jumlah Siswa Laki-Laki', 'required');
-			$this->form_validation->set_rules('jmlpr', 'Jumlah Siswi Perempuan', 'required');
+			// $this->form_validation->set_rules('jmlhonor', 'Jumlah Guru Honor', 'required');
+			// $this->form_validation->set_rules('jmlpns', 'Jumlah Guru PNS', 'required');
+			// $this->form_validation->set_rules('jmllk', 'Jumlah Siswa Laki-Laki', 'required');
+			// $this->form_validation->set_rules('jmlpr', 'Jumlah Siswi Perempuan', 'required');
 			$this->form_validation->set_rules('kodelurah', 'Kode Lurah', 'required');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong');
 			if ($this->form_validation->run() == TRUE) {

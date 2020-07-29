@@ -129,34 +129,67 @@
 								<input type="text" name="niplama" class="form-control">
 								<span class="error niplama text-red"></span>
 							</div> -->
-							<div class="form-group">
+							<div class="col-lg-6 col-xs-6">
+								<div class="form-group">
+									<label>Nama Diklat I</label>
+									<input type="text" name="namadiklat" class="form-control">
+									<span class="error namadiklat text-red"></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6">
+					        	<div class="form-group">
+									<label>Tahun Diklat I</label>
+									<input type="text" name="thndiklat" class="form-control">
+									<span class="error thndiklat text-red"></span>
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6">
+								<div class="form-group">
+									<label>Nama Diklat II</label>
+									<input type="text" name="namadiklat2" class="form-control">
+									<span class="error namadiklat2 text-red"></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6">
+					        	<div class="form-group">
+									<label>Tahun Diklat II</label>
+									<input type="text" name="thndiklat2" class="form-control">
+									<span class="error thndiklat2 text-red"></span>
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6">
+								<div class="form-group">
+									<label>Nama Diklat III</label>
+									<input type="text" name="namadiklat3" class="form-control">
+									<span class="error namadiklat3 text-red"></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6">
+					        	<div class="form-group">
+									<label>Tahun Diklat III</label>
+									<input type="text" name="thndiklat3" class="form-control">
+									<span class="error thndiklat3 text-red"></span>
+								</div>
+							</div>
+<!-- 							<div class="form-group">
 								<label>Nama Diklat</label>
 								<input type="text" name="namadiklat" class="form-control">
 								<span class="error namadiklat text-red"></span>
-							</div>
+							</div> -->
+
+				        </div>
+						<!--/end tengah plate -->
+						<!-- kanan plate -->
+				        <div class="col-lg-4 col-xs-6">
 							<div class="form-group">
 								<label>Pendidiakn Terakhir</label>
 								<select class="form-control" name="pendidikan_terakhir">
-									<option>SMA</option>
-									<option>SMK</option>
-									<option>D1</option>
-									<option>D3</option>
-									<option>D4</option>
 									<option>S1</option>
 									<option>S2</option>
 									<option>S3</option>
 								</select>
 								<span class="error pendidikan_terakhir text-red"></span>
 							</div>
-				        </div>
-						<!--/end tengah plate -->
-						<!-- kanan plate -->
-				        <div class="col-lg-4 col-xs-6">
-				        	<div class="form-group">
-					<label>Tahun Diklat</label>
-					<input type="text" name="thndiklat" class="form-control">
-					<span class="error thndiklat text-red"></span>
-				</div>
 				<div class="form-group">
 					<label>Kode Sekolah</label>
 					<select class="form-control" name="kodesekolah">

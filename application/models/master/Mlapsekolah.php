@@ -2,13 +2,35 @@
 class Mlapsekolah extends CI_Model
 {
 	protected $tabel = 'tb_sekolah';
-	public function getall()
+	public function tampildata_kode($a,$b)
 	{
-		return $this->db->query("SELECT * ,`tb_kelurahan`.`nama_lurah` FROM tb_sekolah
-JOIN `tb_kelurahan` ON
-`tb_kelurahan`.`kode_lurah`=`tb_sekolah`.`kode_lurah_sekolah`
-;")->result_array();
-		// return $this->db->get($this->tabel)->result_array();
+
+
+			return $this->db->query("SELECT *, SUM(`tb_siswasekolah`.`siswa`) AS jml_siswa_lk,
+					SUM(`tb_siswasekolah`.`siswi`) AS jml_siswa_pr, 
+					`tb_kelurahan`.`nama_lurah`
+					FROM `tb_siswasekolah`
+					JOIN `tb_sekolah` ON tb_siswasekolah.`sekolah_kode`=`tb_sekolah`.`kode_sekolah` 
+					JOIN `tb_kelurahan` ON tb_sekolah.`kode_lurah_sekolah`=`tb_kelurahan`.`kode_lurah` WHERE `tb_siswasekolah`.`semester`='$a' AND `tb_siswasekolah`.`tahun`='$b'
+					GROUP BY kode_sekolah;")->result_array();
+		
+	}
+		public function getall()
+	{
+// 		return $this->db->query("SELECT * ,`tb_kelurahan`.`nama_lurah` FROM tb_sekolah
+// JOIN `tb_kelurahan` ON
+// `tb_kelurahan`.`kode_lurah`=`tb_sekolah`.`kode_lurah_sekolah`
+// ;")->result_array();
+
+return $this->db->query("SELECT *,
+					SUM(`tb_siswasekolah`.`siswa`) AS jml_siswa_lk,
+					SUM(`tb_siswasekolah`.`siswi`) AS jml_siswa_pr, 
+					`tb_kelurahan`.`nama_lurah`
+					FROM `tb_siswasekolah`
+					JOIN `tb_sekolah` ON tb_siswasekolah.`sekolah_kode`=`tb_sekolah`.`kode_sekolah` 
+					JOIN `tb_kelurahan` ON tb_sekolah.`kode_lurah_sekolah`=`tb_kelurahan`.`kode_lurah` 
+					GROUP BY kode_sekolah;")->result_array();
+		
 	}
 	public function store($params)
 	{

@@ -22,22 +22,18 @@
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kodelurah" name="kodelurah">
-						<option value="">-- Pilih Kelurahan --</option>
 						<?php foreach ($dlurah as $d) : ?>
 							<option value="<?= $d['kode_lurah']; ?>"><?= $d['kode_lurah']."-". $d['nama_lurah']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					
-							<span class="error kodelurah text-red"></span>
 						</div>
 						<div class="form-group">
 							<select class="form-control kodsekolah" name="kodsekolah">
-						<option value="">-- Pilih Sekolah --</option>
 						<?php foreach ($dsekolah as $d) : ?>
 							<option value="<?= $d['kode_sekolah']; ?>"><?= $d['kode_sekolah']."-". $d['nama_sekolah']; ?></option>
 						<?php endforeach; ?>
 					</select>
-							<span class="error kodesekolah text-red"></span>
 						</div>
 					</div>
 				</hr>
@@ -54,17 +50,25 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lapsekolahkelurahan/tabel')  ?>',
+
+		$('.kodsekolah').select2();
+		$('.kodelurah').select2();
+
+	let kode= "&sekolah=" +$('.kodsekolah').val()+"&lurah=" +$('.kodelurah').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lapsekolahkelurahan/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    			// alert("Kode Sekolah harus dipilih !");
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
+
  	$(document).on('change', '.kodelurah', function(e) {
- 		let kode= "&sekolah=" +$(this).val()+"&lurah=" +$('.kodelurah').val();
+ 		let kode= "&sekolah=" +$('.kodsekolah').val()+"&lurah=" +$('.kodelurah').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lapsekolahkelurahan/tabel_kode')  ?>',
                     type: "post",

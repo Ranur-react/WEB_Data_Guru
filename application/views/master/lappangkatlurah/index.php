@@ -23,7 +23,6 @@
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kode_lurah" name="kode_lurah">
-						<option value="">-- Pilih Kode Kelurahan --</option>
 						<?php foreach ($dlurah as $d) : ?>
 							<option value="<?= $d['kode_lurah']; ?>"><?=$d['kode_lurah']; ?>-<?=$d['nama_lurah']; ?></option>
 						<?php endforeach; ?>
@@ -32,9 +31,9 @@
 
 						<div class="form-group">
 							<select class="form-control pangkat" name="pangkat">
-						<option value="">-- Pilih Pangkat --</option>
 						<?php foreach ($dpangkat as $d) : ?>
-							<option value="<?= $d['kode_pangkat']; ?>"><?=$d['kode_pangkat']; ?></option>
+							<option value="<?= $d['kode_pangkat']; ?>"><?=$d['pangkat_kode_golongan']; ?></option>
+							<!-- <option value="<?= $d['kode_pangkat']; ?>"><?=$d['kode_pangkat']; ?></option> -->
 						<?php endforeach; ?>
 					</select>
 						</div>
@@ -55,18 +54,25 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lappangkatlurah/tabel')  ?>',
+		$('.kode_lurah').select2();
+		$('.pangkat').select2();
+
+		
+ 		let kode= "&a=" +$('.kode_lurah').val()+"&b=" +$('.pangkat').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lappangkatlurah/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	// alert("Golongan harus dipilih");
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
 
 	   	$(document).on('change', '.kode_lurah', function(e) {
- 		let kode= "&a=" +$('.kode_lurah').val()+"&b=" +$('.kode_golongan').val();
+ 		let kode= "&a=" +$('.kode_lurah').val()+"&b=" +$('.pangkat').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lappangkatlurah/tabel_kode')  ?>',
                     type: "post",
@@ -80,8 +86,8 @@
                 });
 
 	});
-	   		   	$(document).on('change', '.kode_golongan', function(e) {
- 		let kode= "&a=" +$('.kode_lurah').val()+"&b=" +$('.kode_golongan').val();
+	   		   	$(document).on('change', '.pangkat', function(e) {
+ 		let kode= "&a=" +$('.kode_lurah').val()+"&b=" +$('.pangkat').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lappangkatlurah/tabel_kode')  ?>',
                     type: "post",
@@ -97,7 +103,7 @@
 
 	});
 	   		$(document).on('click', '.cetak', function(e) {
- 		let kode= "/" +$('.kode_lurah').val()+"/" +$('.kode_golongan').val();
+ 		let kode= "/" +$('.kode_lurah').val()+"/" +$('.pangkat').val();
                     	    setTimeout(function() {
                                 window.location.href = '<?= site_url('master/Lappangkatlurah/cetak')?>'+kode;
                             }, 100);

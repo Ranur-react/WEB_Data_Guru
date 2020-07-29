@@ -15,14 +15,11 @@
 							<label>Kode/Nama Sekolah</label>
 						</div>
 						<div style="height: 7px"></div>
-<!--     					<div class="form-group">
-							<label>Nama Sekolah</label>
-						</div>	 -->
+
 					</div>
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kodesekolah" name="kodesekolah">
-						<option value="">-- Pilih Kode Sekolah --</option>
 						<?php foreach ($dsekolah as $d) : ?>
 							<option value="<?= $d['kode_sekolah']; ?>"><?= $d['kode_sekolah']; ?>-<?= $d['nama_sekolah']; ?></option>
 						<?php endforeach; ?>
@@ -30,15 +27,7 @@
 					
 							<span class="error kodelurah text-red"></span>
 						</div>
-<!-- 						<div class="form-group">
-							<select class="form-control namasekolah" name="namasekolah">
-						<option value="">-- Pilih Nama Sekolah --</option>
-						<?php foreach ($dsekolah as $d) : ?>
-							<option value="<?= $d['nama_sekolah']; ?>"><?= $d['nama_sekolah']; ?></option>
-						<?php endforeach; ?>
-					</select>
-							<span class="error namasekolah text-red"></span>
-						</div> -->
+
 					</div>
 				</hr>
 			</div>
@@ -55,29 +44,21 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lapgurusekolah/tabel')  ?>',
+				$('.kodesekolah').select2();
+let kode= "&a=" +$('.kodesekolah').val()+"&b=" +$('.namasekolah').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lapgurusekolah/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
- // 	$(document).on('change', '.namasekolah', function(e) {
- // 		let kode= "&a=" +$('.kodesekolah').val()+"&b=" +$('.namasekolah').val();
-	//           $.ajax({
- //                    url: '<?= site_url('master/Lapgurusekolah/tabel_kode')  ?>',
- //                    type: "post",
- //                    data: kode,
- //                    cache: false,
- //                    success: function(response) {
- //                    	$('.tampil_tabel').html('');
- //                    	$('.tampil_tabel').html(response);
- //                    }
- //                });
 
-	// });
+
 	   	$(document).on('change', '.kodesekolah', function(e) {
  		let kode= "&a=" +$('.kodesekolah').val()+"&b=" +$('.namasekolah').val();
 	          $.ajax({

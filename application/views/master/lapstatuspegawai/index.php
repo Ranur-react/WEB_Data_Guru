@@ -32,7 +32,6 @@
 
 						<div class="form-group">
 							<select class="form-control status_pegawai" name="status_pegawai">
-						<option value="">-- Pilih Status Kepegawaian --</option>
 						<?php foreach ($dpegawai as $d) : ?>
 							<option value="<?= $d['status_pegawai']; ?>"><?=$d['status_pegawai']; ?></option>
 						<?php endforeach; ?>
@@ -54,13 +53,18 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lapstatuspegawai/tabel')  ?>',
+		$('.status_pegawai').select2();
+		
+		let kode= "&a=" +$('.status_pegawai').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lapstatuspegawai/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	// alert("Golongan harus dipilih");
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
 

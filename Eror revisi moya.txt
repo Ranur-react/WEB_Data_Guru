@@ -1,0 +1,17 @@
+* Tambahkan dan buat Form Input Siswa(L&P) per sekolah Per *semester* selama periode tiap tahunnya (Tabahkan Siswa Per Sekolah)
+
+
+
+* Hapus Input Siswa laki" dan Perempuan pada Form Sekolah
+
+
+
+* Buat Laoran Seklah Parameter Tahun,Laporan Parameter Jumlah Siswa Sekolah Per *semester* periode *tahun*
+
+* Tambahkan Data Nama Kepsek di Form Input Sekolah
+
+
+***Eror pada Edit Guru
+***Eror Pada Laporaan Pangkat dan golongan berp parameter
+
+**Ubahh jenis ComboBox yang manual jadi multiple input and change

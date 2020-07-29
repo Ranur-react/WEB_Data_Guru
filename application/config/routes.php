@@ -17,6 +17,7 @@ $route['Usernamecek'] = 'Login/Usernamecek';
 $route['Passwordcek'] = 'Login/Passwordcek';
 $route['laplurah'] = 'master/Lapkelurahan';
 $route['lapsikola'] = 'master/Lapsekolah';
+$route['Lapsekolah_Semester'] = 'master/Lapsekolah_Semester';
 $route['lapgr'] = 'master/Lapguru';
 $route['lapgol'] = 'master/Lapgolongan';
 $route['lappegawai'] = 'master/Lapkepegawaian';

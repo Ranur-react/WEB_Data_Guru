@@ -17,8 +17,7 @@
 					</div>
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
-							<select class="form-control pangkat" name="pangkat">
-						<!-- <option value="">-- Pilih Pangkat --</option> -->
+							<select class="form-control pangkat pangkatcombo" name="pangkat">
 						<?php foreach ($dpangkat as $d) : ?>
 							<option value="<?= $d['kode_pangkat']; ?>"><?=$d['pangkat_kode_golongan']; ?></option>
 						<?php endforeach; ?>
@@ -41,13 +40,18 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lappangkat/tabel')  ?>',
+		$('.pangkatcombo').select2();
+
+			let kode= "&a=" +$('.pangkat').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lappangkat/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
 

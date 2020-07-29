@@ -23,7 +23,6 @@
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kode_sekolah" name="kode_sekolah">
-						<option value="">-- Pilih Kode Sekolah --</option>
 						<?php foreach ($dsikola as $d) : ?>
 							<option value="<?= $d['kode_sekolah']; ?>"><?=$d['kode_sekolah']; ?>/<?=$d['nama_sekolah']; ?></option>
 						<?php endforeach; ?>
@@ -32,7 +31,6 @@
 
 						<div class="form-group">
 							<select class="form-control kode_pangkat" name="kode_pangkat">
-						<option value="">-- Pilih Pangkat --</option>
 						<?php foreach ($dpangkat as $d) : ?>
 							<option value="<?= $d['kode_pangkat']; ?>"><?=$d['kode_pangkat']; ?></option>
 						<?php endforeach; ?>
@@ -54,18 +52,26 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
-	$.ajax({
-                    url: '<?= site_url('master/Lappangkatsekolah/tabel')  ?>',
+		$('.kode_sekolah').select2();
+		$('.kode_pangkat').select2();
+
+
+		
+	 		let kode= "&a=" +$('.kode_sekolah').val()+"&b=" +$('.kode_pangkat').val();
+	          $.ajax({
+                    url: '<?= site_url('master/Lappangkatsekolah/tabel_kode')  ?>',
                     type: "post",
+                    data: kode,
                     cache: false,
                     success: function(response) {
+                    	// alert("Golongan harus dipilih");
+                    	$('.tampil_tabel').html('');
                     	$('.tampil_tabel').html(response);
-                    	// alert("Bisa");
                     }
                 });
 
 	   	$(document).on('change', '.kode_sekolah', function(e) {
- 		let kode= "&a=" +$('.kode_sekolah').val()+"&b=" +$('.kode_golongan').val();
+ 		let kode= "&a=" +$('.kode_sekolah').val()+"&b=" +$('.kode_pangkat').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lappangkatsekolah/tabel_kode')  ?>',
                     type: "post",
@@ -79,8 +85,8 @@
                 });
 
 	});
-	   		   	$(document).on('change', '.kode_golongan', function(e) {
- 		let kode= "&a=" +$('.kode_sekolah').val()+"&b=" +$('.kode_golongan').val();
+	   		   	$(document).on('change', '.kode_pangkat', function(e) {
+ 		let kode= "&a=" +$('.kode_sekolah').val()+"&b=" +$('.kode_pangkat').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lappangkatsekolah/tabel_kode')  ?>',
                     type: "post",
@@ -96,7 +102,7 @@
 
 	});
 	   		$(document).on('click', '.cetak', function(e) {
- 		let kode= "/" +$('.kode_sekolah').val()+"/" +$('.kode_golongan').val();
+ 		let kode= "/" +$('.kode_sekolah').val()+"/" +$('.kode_pangkat').val();
                     	    setTimeout(function() {
                                 window.location.href = '<?= site_url('master/Lappangkatsekolah/cetak')?>'+kode;
                             }, 100);

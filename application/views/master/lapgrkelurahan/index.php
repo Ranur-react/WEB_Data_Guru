@@ -15,30 +15,18 @@
 							<label>Kode/Nama Kelurahan</label>
 						</div>
 						<div style="height: 7px"></div>
-<!--     					<div class="form-group">
-							<label>Nama Kelurahan</label>
-						</div> -->	
+
 					</div>
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kodelurah" name="kodelurah">
-						<option value="">-- Pilih Kode Kelurahan --</option>
 						<?php foreach ($dlurah as $d) : ?>
 							<option value="<?= $d['kode_lurah']; ?>"><?=$d['kode_lurah']; ?>-<?= $d['nama_lurah']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					
-							<span class="error kodelurah text-red"></span>
 						</div>
-<!-- 						<div class="form-group">
-							<select class="form-control namalurah" name="namalurah">
-						<option value="">-- Pilih Nama Kelurahan --</option>
-						<?php foreach ($dlurah as $d) : ?>
-							<option value="<?= $d['nama_lurah']; ?>"><?= $d['nama_lurah']; ?></option>
-						<?php endforeach; ?>
-					</select>
-							<span class="error namalurah text-red"></span>
-						</div> -->
+
 					</div>
 				</hr>
 			</div>
@@ -56,6 +44,7 @@
 
 <script type="text/javascript">
 	$(document).ready( function(e) {
+		$('.kodelurah').select2();
 	$.ajax({
                     url: '<?= site_url('master/Lapgurukelurahan/tabel')  ?>',
                     type: "post",
