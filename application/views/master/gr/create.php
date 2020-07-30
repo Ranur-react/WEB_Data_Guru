@@ -119,16 +119,6 @@
 								<input type="text" name="masajabatan" class="form-control">
 								<span class="error masajabatan text-red"></span>
 							</div>
-<!-- 							<div class="form-group">
-								<label>Ren Pensiun</label>
-								<input type="text" name="renpensiun" class="form-control">
-								<span class="error renpensiun text-red"></span>
-							</div> -->
-<!-- 							<div class="form-group">
-								<label>NIP Lama</label>
-								<input type="text" name="niplama" class="form-control">
-								<span class="error niplama text-red"></span>
-							</div> -->
 							<div class="col-lg-6 col-xs-6">
 								<div class="form-group">
 									<label>Nama Diklat I</label>

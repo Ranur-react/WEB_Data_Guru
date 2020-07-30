@@ -61,12 +61,14 @@ class Msekolah extends CI_Model
 	public function update($params)
 	{
 		$kode = $params['kode'];
-		$data = [
+				$data = [
 			'kode_sekolah'   => $params['kode'],
 			'nama_sekolah'   => $params['nama'],
 			'alamat_sekolah'   => $params['alamat'],
 			'telp_sekolah'   => $params['telp'],
-			'kode_lurah_sekolah'   => $params['kodelurah'],
+			'kode_lurah_sekolah'   => $params['kodelurah'],	
+			'nama_kepsek'   => $params['nama_kepsek'],	
+
 		];
 		return $this->db->where('kode_sekolah', $kode)->update($this->tabel, $data);
 	}

@@ -42,8 +42,8 @@
 								<td><?= $d['jml_siswa_lk'] ?> </td>
 								<td> <?= $d['jml_siswa_pr'] ?></td>
 								<td>
-									<button class="btn bg-blue btnsiswa"  onclick="btnsiswa('<?= $d['kode_sekolah'] ?>')" ><i class="icon-pencil7"></i> Ubah Data Siswa</button>
-									<button class="btn bg-blue btnsiswa"  onclick="btnsiswaAJX('<?= $d['kode_sekolah'] ?>')" ><i class="icon-pencil7"></i> Ubah Data Siswa AJX</button>
+									<!-- <button class="btn bg-blue btnsiswa"  onclick="btnsiswa('<?= $d['kode_sekolah'] ?>')" ><i class="icon-pencil7"></i> Ubah Data Siswa</button> -->
+									<button class="btn bg-blue btnsiswa"  onclick="btnsiswaAJX('<?= $d['kode_sekolah'] ?>')" ><i class="icon-pencil7"></i> Ubah Data Siswa </button>
 								</td>
 								<td><?= $d['nama_lurah'] ?></td>
 								<td class="text-center" width="60px">

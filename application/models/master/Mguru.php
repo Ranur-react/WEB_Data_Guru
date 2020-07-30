@@ -6,7 +6,7 @@ class Mguru extends CI_Model
 	{
 		$this->db->from($this->tabel);
 		$this->db->join('tb_sekolah', 'kode_sekolah=kode_sekolah_guru');
-		$this->db->join('tb_golongan', 'kode_golongan=kode_golongan_guru');
+		// $this->db->join('tb_golongan', 'kode_golongan=kode_golongan_guru');
 		$this->db->join('tb_kepegawaian', 'kode_pegawai=kode_pegawai_guru');
 		$this->db->join('tb_matapelajaran', 'kode_matapelajaran=kode_jenis_guru');
 		return $this->db->get()->result_array();
@@ -65,16 +65,19 @@ class Mguru extends CI_Model
 			'status_guru'   => $params['status'],
 			'jabatan_guru'   => $params['jabatan'],
 			'masa_jabatan_guru'   => $params['masajabatan'],
-			'ren_pensiun_guru'   => $params['renpensiun'],
-			'nip_lama_guru'   => $params['niplama'],
 			'nama_diklat_guru'   => $params['namadiklat'],
 			'thn_diklat_guru'   => $params['thndiklat'],
+			'nama_diklat_guru2'   => $params['namadiklat2'],
+			'thn_diklat_guru2'   => $params['thndiklat2'],
+			'nama_diklat_guru3'   => $params['namadiklat3'],
+			'thn_diklat_guru3'   => $params['thndiklat3'],
 			'kode_sekolah_guru'   => $params['kodesekolah'],
 			'kode_jenis_guru'   => $params['kodejenisguru'],
-			'tgl_diangkat_guru'   => $params['tgldiangkat'],
 			'no_sk_guru'   => $params['nosk'],
 			'kode_golongan_guru'   => $params['kodegolongan'],
 			'kode_pegawai_guru'   => $params['kodekepegawaian'],
+			'kode_pangkat_guru'   => $params['kodepangkat'],
+			'pendidikan_terakhir'   => $params['pendidikan_terakhir'],
 		];
 		return $this->db->where('nip_guru', $kode)->update($this->tabel, $data);
 	}

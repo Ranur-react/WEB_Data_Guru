@@ -19,7 +19,11 @@
 					<input type="text" name="nama" class="form-control" value="<?= $data['nama_sekolah'] ?>">
 					<span class="error nama text-red"></span>
 				</div>
-
+				<div class="form-group">
+					<label>Nama Kepala Sekolah</label>
+					<input type="text" name="nama_kepsek" value="<?= $data['nama_kepsek'] ?>" class="form-control">
+					<span class="error nama_kepsek text-red"></span>
+				</div>
 				<div class="form-group">
 					<label>Alamat Sekolah</label>
 					<input type="text" name="alamat" class="form-control" value="<?= $data['alamat_sekolah'] ?>">
@@ -32,7 +36,7 @@
 					<span class="error telp text-red"></span>
 				</div>
 
-
+<!-- 
 				<div class="form-group">
 					<label>Jml.Siswa Laki-Laki</label>
 					<input type="text" name="jmllk" class="form-control" value="<?= $data['jml_siswa_lk'] ?>">
@@ -43,7 +47,7 @@
 					<label>Jml.Siswi Perempuan</label>
 					<input type="text" name="jmlpr" class="form-control" value="<?= $data['jml_siswa_pr'] ?>">
 					<span class="error jmlpr text-red"></span>
-				</div>
+				</div> -->
 
 				<div class="form-group">
 					<label>Kode Kelurahan</label>

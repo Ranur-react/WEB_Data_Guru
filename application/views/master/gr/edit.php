@@ -1,8 +1,8 @@
 <script>
 
 	$(document).ready( function(e) {
-	   	$(document).on('change', '.kodekepegawaian', function(e) {
-			   let a=$('.kodekepegawaian').val();
+		let combohide=()=>{
+						   let a=$('.kodekepegawaian').val();
 			   if(a=="PG-02"){
 				$('.kodegolongan').hide();
 				$('.nosk').hide();
@@ -13,7 +13,10 @@
 				$('.nosk').show();
 			   
 			   }
-
+		}
+		combohide();
+	   	$(document).on('change', '.kodekepegawaian', function(e) {
+	   			combohide();
 	});
 	   	});
 </script>
@@ -110,68 +113,103 @@
 								<input type="text" name="masajabatan" class="form-control" value="<?= $data['masa_jabatan_guru'] ?>">
 								<span class="error masajabatan text-red"></span>
 							</div>
-<!-- 							<div class="form-group">
-								<label>Ren Pensiun</label>
-								<input type="text" name="renpensiun" class="form-control" value="<?= $data['ren_pensiun_guru'] ?>">
-								<span class="error renpensiun text-red"></span>
-							</div> -->
-<!-- 							<div class="form-group">
-								<label>NIP Lama</label>
-								<input type="text" name="niplama" class="form-control" value="<?= $data['nip_lama_guru'] ?>">
-								<span class="error niplama text-red"></span>
-							</div> -->
-							<div class="form-group">
-								<label>Nama Diklat</label>
-								<input type="text" name="namadiklat" class="form-control" value="<?= $data['nama_diklat_guru'] ?>">
-								<span class="error namadiklat text-red"></span>
+
+														<div class="col-lg-6 col-xs-6">
+								<div class="form-group">
+									<label>Nama Diklat I</label>
+									<input type="text" value="<?= $data['nama_diklat_guru'] ?>" name="namadiklat" class="form-control">
+									<span class="error namadiklat text-red"></span>
+								</div>
 							</div>
+							<div class="col-lg-6 col-xs-6">
+					        	<div class="form-group">
+									<label>Tahun Diklat I</label>
+									<input type="text" value="<?= $data['thn_diklat_guru'] ?>" name="thndiklat" class="form-control">
+									<span class="error thndiklat text-red"></span>
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6">
+								<div class="form-group">
+									<label>Nama Diklat II</label>
+									<input type="text" value="<?= $data['nama_diklat_guru2'] ?>" name="namadiklat2" class="form-control">
+									<span class="error namadiklat2 text-red"></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6">
+					        	<div class="form-group">
+									<label>Tahun Diklat II</label>
+									<input type="text" value="<?= $data['thn_diklat_guru2'] ?>" name="thndiklat2" class="form-control">
+									<span class="error thndiklat2 text-red"></span>
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6">
+								<div class="form-group">
+									<label>Nama Diklat III</label>
+									<input type="text" value="<?= $data['nama_diklat_guru3'] ?>" name="namadiklat3" class="form-control">
+									<span class="error namadiklat3 text-red"></span>
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6">
+					        	<div class="form-group">
+									<label>Tahun Diklat III</label>
+									<input type="text" value="<?= $data['thn_diklat_guru3'] ?>" name="thndiklat3" class="form-control">
+									<span class="error thndiklat3 text-red"></span>
+								</div>
+							</div>
+
 				        </div>
-						<!--/end tengah plate -->
-						<!-- kanan plate -->
-				        <div class="col-lg-4 col-xs-6">
-				        	<div class="form-group">
-					<label>Tahun Diklat</label>
-					<input type="text" name="thndiklat" class="form-control" value="<?= $data['thn_diklat_guru'] ?>">
-					<span class="error thndiklat text-red"></span>
-				</div>
+
+<div class="col-lg-4 col-xs-6">
+							<div class="form-group">
+								<label>Pendidiakn Terakhir </label>
+								<select class="form-control"  name="pendidikan_terakhir">
+									<option <?= $data['pendidikan_terakhir'] == 'S1'? 'selected' : null ?> >S1</option>
+									<option <?= $data['pendidikan_terakhir'] == 'S2'? 'selected' : null ?>>S2</option>
+									<option <?= $data['pendidikan_terakhir'] == 'S3'? 'selected' : null ?>>S3</option>
+								</select>
+								<span class="error pendidikan_terakhir text-red"></span>
+							</div>
 				<div class="form-group">
 					<label>Kode Sekolah</label>
 					<select class="form-control" name="kodesekolah">
 						<option value="">-- Pilih Sekolah --</option>
 						<?php foreach ($dsekolah as $d) : ?>
-							<option value="<?php echo $d['kode_sekolah']; ?>" <?= $d['kode_sekolah'] == $data['kode_sekolah_guru'] ? 'selected' : null ?>><?php echo $d['kode_sekolah']."-". $d['nama_sekolah']; ?></option>
+							<option <?= $data['kode_sekolah_guru'] == $d['kode_sekolah'] ? 'selected' : null ?>
+							 value="<?= $d['kode_sekolah']; ?>"><?= $d['kode_sekolah']."-". $d['nama_sekolah']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					<span class="error kodesekolah text-red"></span>
 				</div>
 				<div class="form-group">
-					<label>Jenis Guru</label>
+					<label>Matapelajaran</label>
 					<select class="form-control" name="kodejenisguru">
 						<option value="">-- Pilih Kode --</option>
-						<?php foreach ($djenisguru as $d) : ?>
-							<option value="<?php echo $d['kode_matapelajaran']; ?>" <?= $d['kode_matapelajaran'] == $data['kode_jenis_guru'] ? 'selected' : null ?>><?php echo $d['kode_matapelajaran']."-". $d['nama_matapelajaran']; ?></option>
+						<?php foreach ($dmapel as $d) : ?>
+							<option <?= $data['kode_jenis_guru'] == $d['kode_matapelajaran'] ? 'selected' : null ?>
+							 value="<?= $d['kode_matapelajaran']; ?>"><?= $d['kode_matapelajaran']."-". $d['nama_matapelajaran']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					<span class="error kodejenisguru text-red"></span>
 				</div>
 <!-- 				<div class="form-group">
 					<label>Tanggal Diangkat</label>
-					<input type="date" name="tgldiangkat" class="form-control" value="<?= $data['tgl_diangkat_guru'] ?>">
+					<input type="date" name="tgldiangkat" class="form-control">
 					<span class="error tgldiangkat text-red"></span>
 				</div> -->
-					<div class="form-group">
+				<div class="form-group">
 					<label>Kode Kepegawaian</label>
 					<select class="form-control kodekepegawaian" name="kodekepegawaian">
 						<option value="">-- Pilih Kepegawaian --</option>
 						<?php foreach ($dkepegawaian as $d) : ?>
-							<option value="<?php echo $d['kode_pegawai']; ?>" <?= $d['kode_pegawai'] == $data['kode_pegawai_guru'] ? 'selected' : null ?>><?php echo $d['kode_pegawai']."-". $d['status_pegawai']; ?></option>
+							<option <?= $data['kode_pegawai_guru'] == $d['kode_pegawai'] ? 'selected' : null ?>
+							 value="<?= $d['kode_pegawai']; ?>"><?= $d['kode_pegawai']."-". $d['status_pegawai']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					<span class="error kodekepegawaian text-red"></span>
 				</div>
 				<div class="form-group">
 					<label class="nosk">No SK</label>
-					<input type="text" name="nosk" class="form-control nosk" value="<?= $data['no_sk_guru'] ?>">
+					<input type="text " value="<?= $data['no_sk_guru']; ?>" name="nosk" class="form-control nosk">
 					<span class="error nosk text-red"></span>
 				</div>
 				<div class="form-group">
@@ -179,14 +217,25 @@
 					<select class="form-control kodegolongan" name="kodegolongan">
 						<option value="">-- Pilih Golongan --</option>
 						<?php foreach ($dgolongan as $d) : ?>
-							<option value="<?php echo $d['kode_golongan']; ?>" <?= $d['kode_golongan'] == $data['kode_golongan_guru'] ? 'selected' : null ?>><?php echo $d['kode_golongan']."-". $d['pangkat']; ?></option>
+							<option <?= $data['kode_golongan_guru'] == $d['kode_golongan'] ? 'selected' : null ?>
+							 value="<?= $d['kode_golongan']; ?>"><?= $d['kode_golongan']."-". $d['nama_golongan']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					<span class="error kodegolongan text-red"></span>
 				</div>
-
+				<div class="form-group">
+					<label class="kodepangkat">Pangkat</label>
+					<select class="form-control kodepangkat" name="kodepangkat">
+						<option value="">-- Pilih Pangkat --</option>
+						<?php foreach ($dpangkat as $d) : ?>
+							<option <?= $data['kode_pangkat_guru'] == $d['kode_pangkat'] ? 'selected' : null ?>
+							 value="<?= $d['kode_pangkat']; ?>"><?= $d['pangkat_kode_golongan']; ?></option>
+						<?php endforeach; ?>
+					</select>
+					<span class="error kodepangkat text-red"></span>
+				</div>
 				        </div>
-						<!--/end kanan plate -->
+
 				    </div>
 				</div>
 				<div class="modal-footer">

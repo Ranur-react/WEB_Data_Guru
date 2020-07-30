@@ -35,11 +35,35 @@ class Siswasekolah extends CI_Controller
 		$data['datasiswa']=$this->Msiswasekolah->jumlahsiswa($kode);
 		$this->load->view('master/Siswasekolah/create_AJAX',$data);//panggil dari view
 	}
+	public function tampil_tabel()
+	{
+		$kode = $this->input->post('kode_sekolah');
+		$data['datasiswa']=$this->Msiswasekolah->jumlahsiswa($kode);
+		$this->load->view('master/Siswasekolah/tabel', $data);
+	}
 	public function storeajx()
 	{
-		if ($this->input->is_ajax_request() == TRUE) {
-			$A = $this->input->post('kode');
-			echo "Berhasil esekusi___".$A;
+				if ($this->input->is_ajax_request() == TRUE) {
+		$kode = $this->input->post('kode_sekolah');
+			$this->form_validation->set_rules('kode_sekolah', 'Kode Sekolah', 'required|is_unique[tb_golongan.kode_golongan]');
+			$this->form_validation->set_rules('siswa', 'Siswa', 'required');
+			$this->form_validation->set_rules('siswi', 'Siswi', 'required');
+			$this->form_validation->set_rules('semester', 'Periode Semester ', 'required');
+			$this->form_validation->set_rules('tahun', 'Periode Tahun', 'required');
+
+			$this->form_validation->set_message('required', '%s tidak boleh kosong.');
+			$this->form_validation->set_message('is_unique', '%s sudah digunakan.');
+			if ($this->form_validation->run() == TRUE) {
+				$params = $this->input->post(null, TRUE);
+				$this->Msiswasekolah->update_and_insert($params);
+				$data['datasiswa']=$this->Msiswasekolah->jumlahsiswa($kode);
+				$this->load->view('master/Siswasekolah/tabel', $data);
+			} 
+				// else {
+			// 	$json['status'] = false;
+			// 	$json['pesan']  = $this->form_validation->error_array();
+			// 	echo json_encode($json);
+			// }
 		} else {
 			exit('data tidak bisa dieksekusi');
 		}

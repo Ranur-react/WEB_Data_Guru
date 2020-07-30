@@ -42,22 +42,16 @@ class Guru extends CI_Controller
 			$this->form_validation->set_rules('nama', 'Nama Guru', 'required');
 			$this->form_validation->set_rules('tmplahir', 'Tempat Lahir', 'required');
 			$this->form_validation->set_rules('tgllahir', 'Tangggal Lahir', 'required');
-			// $this->form_validation->set_rules('alamat', 'Alamat Guru', 'required');
 			$this->form_validation->set_rules('tlp', 'Telp Guru', 'required');
 			$this->form_validation->set_rules('jenkel', 'Jenis Kelamin', 'required');
 			$this->form_validation->set_rules('agama', 'Agama', 'required');
 			$this->form_validation->set_rules('status', 'Status', 'required');
 			$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 			$this->form_validation->set_rules('masajabatan', 'Masa Jabatan', 'required');
-			// $this->form_validation->set_rules('renpensiun', 'Ren Pensiun', 'required');
-			// $this->form_validation->set_rules('niplama', 'Nip Lama', 'required');
 			$this->form_validation->set_rules('namadiklat', 'Nama Diklat', 'required');
 			$this->form_validation->set_rules('thndiklat', 'Tahun Diklat', 'required');
 			$this->form_validation->set_rules('kodesekolah', 'Kode Sekolah', 'required');
 			$this->form_validation->set_rules('kodejenisguru', 'Kode Jenis Guru', 'required');
-			// $this->form_validation->set_rules('tgldiangkat', 'Tanggal Diangkat', 'required');
-			// $this->form_validation->set_rules('nosk', 'No SK', 'required');
-			// $this->form_validation->set_rules('kodegolongan', 'Kode Golongan', 'required');
 			$this->form_validation->set_rules('kodekepegawaian', 'Kode Kepegawaian', 'required');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong.');
 			$this->form_validation->set_message('is_unique', '%s sudah digunakan.');
@@ -80,6 +74,8 @@ class Guru extends CI_Controller
 		$kode = $this->input->post('kode');
 		$d['dsekolah'] = $this->Msekolah->getall();
 		$d['dgolongan'] = $this->Mgolongan->getall();
+		$d['dpangkat'] = $this->Mpangkat->getall();
+		
 		$d['dkepegawaian'] = $this->Mkepegawaian->getall();
 		$d['dmapel'] = $this->Mmapel->getall();
 		$d['data'] = $this->Mguru->shows($kode);
@@ -90,26 +86,22 @@ class Guru extends CI_Controller
 	{
 		if ($this->input->is_ajax_request() == TRUE) {
 			// $this->form_validation->set_rules('nip', 'Nip Guru', 'required');
-			$this->form_validation->set_rules('nama', 'Nama Guru', 'required');
+						$this->form_validation->set_rules('nama', 'Nama Guru', 'required');
 			$this->form_validation->set_rules('tmplahir', 'Tempat Lahir', 'required');
 			$this->form_validation->set_rules('tgllahir', 'Tangggal Lahir', 'required');
-			// $this->form_validation->set_rules('alamat', 'Alamat Guru', 'required');
 			$this->form_validation->set_rules('tlp', 'Telp Guru', 'required');
 			$this->form_validation->set_rules('jenkel', 'Jenis Kelamin', 'required');
 			$this->form_validation->set_rules('agama', 'Agama', 'required');
 			$this->form_validation->set_rules('status', 'Status', 'required');
 			$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 			$this->form_validation->set_rules('masajabatan', 'Masa Jabatan', 'required');
-			// $this->form_validation->set_rules('renpensiun', 'Ren Pensiun', 'required');
-			// $this->form_validation->set_rules('niplama', 'Nip Lama', 'required');
 			$this->form_validation->set_rules('namadiklat', 'Nama Diklat', 'required');
 			$this->form_validation->set_rules('thndiklat', 'Tahun Diklat', 'required');
 			$this->form_validation->set_rules('kodesekolah', 'Kode Sekolah', 'required');
 			$this->form_validation->set_rules('kodejenisguru', 'Kode Jenis Guru', 'required');
-			// $this->form_validation->set_rules('tgldiangkat', 'Tanggal Diangkat', 'required');
-			// $this->form_validation->set_rules('nosk', 'No SK', 'required');
-			// $this->form_validation->set_rules('kodegolongan', 'Kode Golongan', 'required');
 			$this->form_validation->set_rules('kodekepegawaian', 'Kode Kepegawaian', 'required');
+			$this->form_validation->set_message('required', '%s tidak boleh kosong.');
+			$this->form_validation->set_message('is_unique', '%s sudah digunakan.');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong.');
 			$this->form_validation->set_message('is_unique', '%s sudah digunakan.');
 			if ($this->form_validation->run() == TRUE) {
