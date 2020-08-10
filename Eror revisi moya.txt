@@ -1,4 +1,4 @@
 V	*** Pangkat pada input guru HONORER harus hilag
 V *** Notofikasi Update Data Jumlah Siswa pada Sekolah
-*** Tambah Output Rekap Laporan Data Pendidikan Guru berdasarkan Sekolah
+V *** Tambah Output Rekap Laporan Data Pendidikan Guru berdasarkan Sekolah
 V *** Diklat Dynamis Input
