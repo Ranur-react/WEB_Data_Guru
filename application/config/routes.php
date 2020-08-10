@@ -34,5 +34,6 @@ $route['lapstatuspegawai'] = 'master/Lapstatuspegawai';
 $route['lapstatuspegawaiskl'] = 'master/Lapstatuspegawaiskl';
 $route['lapstatuspegawailurah'] = 'master/Lapstatuspegawailurah';
 $route['pangkat'] = 'master/Pangkat';
+$route['lapensek'] = 'master/laporan_Pendidikan_Guru_Berdasarkan_Sekolah';
 
 

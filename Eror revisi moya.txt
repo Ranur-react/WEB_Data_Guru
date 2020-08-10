@@ -1,24 +1,4 @@
-V/5 	* Tambahkan dan buat Form Input Siswa(L&P) per sekolah Per *semester* selama periode tiap tahunnya 
-		(Tabahkan Siswa Per Sekolah)
-
-
-
-V		* Hapus Input Siswa laki" dan Perempuan pada Form Sekolah
-
-
-
-V		* Buat Laoran Seklah Parameter Tahun,Laporan Parameter Jumlah Siswa Sekolah Per *semester* 
-		  periode *tahun*
-
-V 		* Tambahkan Data Nama Kepsek di Form Input Sekolah
-
-V       ***Input Guru, Nama diklat usahakan Multiple Input ()
-
-
-V		**Ubahh jenis ComboBox yang manual jadi multiple input and change
-
-***Eror tabel tampil Jumlah siswa sekolah
-***Eror pada Edit Guru
-***Eror Pada Laporaan Pangkat dan golongan berp parameter
-
-
+V	*** Pangkat pada input guru HONORER harus hilag
+V *** Notofikasi Update Data Jumlah Siswa pada Sekolah
+*** Tambah Output Rekap Laporan Data Pendidikan Guru berdasarkan Sekolah
+V *** Diklat Dynamis Input

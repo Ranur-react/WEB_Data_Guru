@@ -35,6 +35,24 @@ class Mguru extends CI_Model
 			'nama_diklat_guru3'   => $params['namadiklat3'],
 			'thn_diklat_guru3'   => $params['thndiklat3'],
 
+			'nama_diklat_guru4'   => $params['namadiklat4'],
+			'nama_diklat_guru5'   => $params['namadiklat5'],
+			'nama_diklat_guru6'   => $params['namadiklat6'],
+			'nama_diklat_guru7'   => $params['namadiklat7'],
+			'nama_diklat_guru8'   => $params['namadiklat8'],
+			'nama_diklat_guru9'   => $params['namadiklat9'],
+			'nama_diklat_guru10'   => $params['namadiklat10'],
+
+
+
+			'thn_diklat_guru4'   => $params['thndiklat4'],
+			'thn_diklat_guru5'   => $params['thndiklat5'],
+			'thn_diklat_guru6'   => $params['thndiklat6'],
+			'thn_diklat_guru7'   => $params['thndiklat7'],
+			'thn_diklat_guru8'   => $params['thndiklat8'],
+			'thn_diklat_guru9'   => $params['thndiklat9'],
+			'thn_diklat_guru10'   => $params['thndiklat10'],
+
 
 			'kode_sekolah_guru'   => $params['kodesekolah'],
 			'kode_jenis_guru'   => $params['kodejenisguru'],

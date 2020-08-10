@@ -16,6 +16,10 @@
 					<input type="hidden" class="form-control kode_sekolah" name="kode_sekolah" value="<?= $kode  ?>">
 				</div>
 <div class="row">
+		<div class="pesan_notifikasi">
+			
+<?php echo sukses('Data Jumlah Siswa Sekolah berhasil diupdate.'); ?>
+		</div>
 	<div class="col-xs-6">
 				<div class="form-group">
 					<label>Jumlah Siswa laki-Laki</label>
@@ -64,11 +68,17 @@
 		</div>
 	</div>
 </div>
+
 <script>
 			$(document).on('focus', '.semester', function(e) {
-				$('.kode_sekolah').removeAttr("disabled");
-	});
+				$('.kode_sekolah').removeAttr("disabled");});
+			
 			$(document).ready( function(e) {
+	                    	$('.pesan_notifikasi').hide();
+
+
+
+
                 formData = "&kode_sekolah=" + $('.kode_sekolah').val() + "&siswa=" + $('.siswa').val()+ "&siswi=" + $('.siswi').val()+ "&semester=" + $('.semester').val()+ "&tahun=" + $('.tahun').val();
                 $.ajax({
                     url: '<?= site_url('master/Siswasekolah/tampil_tabel')  ?>',
@@ -109,6 +119,12 @@
                         $('.iconnotifie').removeClass('text-black fa-spin fa-spinner text-green fa-check text-red fa-close ');
 	                      	$('.tampil_tabel').html('');
 	                    	$('.tampil_tabel').html(response);
+
+	                    	$('.pesan_notifikasi').show();
+                            setTimeout(function() {
+	                    	$('.pesan_notifikasi').hide();
+                            }, 3000)
+							 
 
                        
                     },

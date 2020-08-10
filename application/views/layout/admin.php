@@ -112,6 +112,11 @@
 							Laporan Pangkat dan Golongan Guru
 					</a>
 				</li>
+				<li class="<?= $urls == "Room" ? "active" : null ?>">
+					<a href="<?= site_url('lapensek') ?>"><i class="fa fa-file-text"></i>
+							Laporan Pendidikan Guru Berdasarkan Sekolah
+					</a>
+				</li>
 
 				<li class="<?= $urls == "Room" ? "active" : null ?>">
 					<a href="<?= site_url('lappangkat') ?>"><i class="fa fa-file-text"></i>
