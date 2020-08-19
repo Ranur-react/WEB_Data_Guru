@@ -28,7 +28,6 @@ class Kelurahan extends CI_Controller
 		if ($this->input->is_ajax_request() == TRUE) {
 			$this->form_validation->set_rules('kode', 'Kode Kelurahan', 'required|is_unique[tb_kelurahan.kode_lurah]');
 			$this->form_validation->set_rules('nama', 'Nama Kelurahan', 'required');
-			$this->form_validation->set_rules('jumlahsd', 'Jumlah SD', 'required');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong.');
 			$this->form_validation->set_message('is_unique', '%s sudah digunakan.');
 			if ($this->form_validation->run() == TRUE) {
@@ -56,7 +55,6 @@ class Kelurahan extends CI_Controller
 		if ($this->input->is_ajax_request() == TRUE) {
 			$this->form_validation->set_rules('kode', 'Kode Kelurahan', 'required');
 			$this->form_validation->set_rules('nama', 'Nama Kelurahan', 'required');
-			$this->form_validation->set_rules('jumlahsd', 'Jumlah SD', 'required');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong');
 			if ($this->form_validation->run() == TRUE) {
 				$params = $this->input->post(null, TRUE);

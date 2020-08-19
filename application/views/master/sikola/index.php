@@ -63,6 +63,10 @@
 
 <div id="tampil_modal"></div>
 <script>
+	if($('#modal_tambah').modal()=="'show'"){
+		alert("Show");
+	}
+
 	$(document).on('click', '.btntambah', function(e) {
 		$.ajax({
 			url: "<?= site_url('master/Sekolah/create') ?>",

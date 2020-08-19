@@ -8,6 +8,7 @@ class Siswasekolah extends CI_Controller
 		parent::__construct();
 		$this->load->model('master/Msekolah');
 		$this->load->model('master/Msiswasekolah');
+		
 	}
 	// public function index()
 	// {
@@ -29,6 +30,7 @@ class Siswasekolah extends CI_Controller
 	}
 		public function createAJX()
 	{
+		
 		$kode = $this->input->post('kode');
 		$data['kode']=$kode;
 		$data['data']=$this->Msekolah->getall();
@@ -38,6 +40,7 @@ class Siswasekolah extends CI_Controller
 	public function tampil_tabel()
 	{
 		$kode = $this->input->post('kode_sekolah');
+		$data['tesbanakoa']=$kode;
 		$data['datasiswa']=$this->Msiswasekolah->jumlahsiswa($kode);
 		$this->load->view('master/Siswasekolah/tabel', $data);
 	}

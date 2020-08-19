@@ -4,7 +4,8 @@ class Mlapkelurahan extends CI_Model
 	protected $tabel = 'tb_kelurahan';
 	public function getall()
 	{
-		return $this->db->get($this->tabel)->result_array();
+		return $this->db->query("SELECT*, COUNT(`tb_sekolah`.`kode_sekolah`) AS jumlah_sd FROM tb_kelurahan
+JOIN `tb_sekolah` ON `tb_sekolah`.`kode_lurah_sekolah`=`tb_kelurahan`.`kode_lurah` GROUP BY`tb_kelurahan`.`kode_lurah`;")->result_array();
 	}
 	public function store($params)
 	{

@@ -33,6 +33,6 @@ class Msiswasekolah extends CI_Model
 	{
 		return $this->db->query("SELECT * FROM `tb_siswasekolah` 
 JOIN `tb_sekolah` ON `tb_sekolah`.`kode_sekolah`=`tb_siswasekolah`.`sekolah_kode`
-WHERE `tb_siswasekolah`.`sekolah_kode`='SKL1';")->result_array();;
+WHERE `tb_siswasekolah`.`sekolah_kode`='$value';")->result_array();;
 	}
 }

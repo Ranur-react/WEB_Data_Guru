@@ -13,7 +13,6 @@
 							<th class="text-center">No.</th>
 							<th>Kode Kelurahan</th>
 							<th>Nama Kelurahan</th>
-							<th>Jumlah SD</th>
 							<th class="text-center">Aksi</th>
 						</tr>
 					</thead>
@@ -24,7 +23,6 @@
 								<td class="text-center" width="40px"><?= $no . '.'; ?></td>
 								<td><?= $d['kode_lurah'] ?></td>
 								<td><?= $d['nama_lurah'] ?></td>
-								<td><?= $d['jumlah_sd'] ?></td>
 								<td class="text-center" width="60px">
 									<a href="javascript:void(0)" onclick="edit('<?= $d['kode_lurah'] ?>')"><i class="icon-pencil7 text-green" data-toggle="tooltip" data-original-title="Edit Data"></i></a>
 									<a href="<?= site_url('master/Kelurahan/destroy/' . $d['kode_lurah']) ?>" onclick="return confirm('Yakin akan hapus data ini ?');"><i class="icon-trash text-red" data-toggle="tooltip" data-original-title="Hapus Data"></i></a>

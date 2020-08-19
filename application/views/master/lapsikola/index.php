@@ -15,7 +15,6 @@
 					<thead>
 						<tr>
 							<th class="text-center">No.</th>
-							<th>Kelurahan</th>
 							<th>Nama Sekolah</th>
 							<th>Alamat Sekolah</th>
 							<th>Telp Sekolah</th>
@@ -35,7 +34,6 @@
 						foreach ($data as $d) { ?>
 							<tr>
 								<td class="text-center" width="40px"><?= $no . '.'; ?></td>
-									<td><?= $d['nama_lurah'] ?></td>
 								<td><?= $d['nama_sekolah'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>

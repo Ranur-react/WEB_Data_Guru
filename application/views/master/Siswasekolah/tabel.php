@@ -9,7 +9,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php $no = 1;
+						<?php
+								// $datasiswaX=$this->Msiswasekolah->jumlahsiswa($kode);
+// echo "$tesbanakoa";
+						 $no = 1;
 						foreach ($datasiswa as $d) { ?>
 							<tr >
 								<td>Semester <?= $d['semester'] ?></td>

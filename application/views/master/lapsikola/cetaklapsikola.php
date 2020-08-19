@@ -19,7 +19,6 @@
 	<thead>
 		<tr>
 			<th  width="5%">No.</th>
-			<th width="15%">Kode Sekolah</th>
 			<th width="20%">Nama Sekolah</th>
 			<th width="20%">Alamat Sekolah</th>
 			<th width="15%">Telp Sekolah</th>
@@ -27,7 +26,7 @@
 			<th width="12%">Jml.Guru PNS</th>
 			<th width="15%">Jml.Siswa Laki-Laki</th>
 			<th width="15%">Jml.Siswi Perempuan</th>
-			<th width="15%">Kode Kelurahan</th>
+			<th width="15%"> Kelurahan</th>
 			
 			
 		</tr>
@@ -40,31 +39,32 @@
 						$totpr=0;
 						foreach ($data as $d) { ?>
 							<tr>
-								<td width="40px"><?= $no . '.'; ?></td>
-								<td><?= $d['kode_sekolah'] ?></td>
+								<td class="text-center" width="40px"><?= $no . '.'; ?></td>
 								<td><?= $d['nama_sekolah'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>
-								<td><?= $d['jml_guru_honor'] ?></td>
-								<td><?= $d['jml_guru_pns'] ?></td>
+								<?php $dhonor=$this->Msekolah->hitunghonor($d['kode_sekolah']) ?>
+								<?php $dpns=$this->Msekolah->hitungpns($d['kode_sekolah']) ?>
+								<td><?php echo $dhonor['jumlahpns']; ?></td>
+								<td><?php echo $dpns['jumlahpns']; ?></td>
 								<td><?= $d['jml_siswa_lk'] ?></td>
 								<td><?= $d['jml_siswa_pr'] ?></td>
-								<td><?= $d['kode_lurah_sekolah'] ?></td>
+								<td><?= $d['nama_lurah'] ?></td>
 								
 									
 								</td>
 							</tr>
 						<?php $no++;
-						$tothonor=$tothonor+$d['jml_guru_honor'];
-						$totpns=$totpns+$d['jml_guru_pns'];
+						$tothonor=$tothonor+$dhonor['jumlahpns'];
+						$totpns=$totpns+$dpns['jumlahpns'];
 						$totlk=$totlk+$d['jml_siswa_lk'];
 						$totpr=$totpr+$d['jml_siswa_pr'];
 						} ?>
 						
 					</tbody>
-	<tfoot>
+					<tfoot>
 						<th>
-							<td colspan="4" align="right">
+							<td colspan="4" align="center">
 								<b>Total</b> 
 							</td>	
 							<td>

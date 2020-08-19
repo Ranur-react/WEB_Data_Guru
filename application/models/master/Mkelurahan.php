@@ -11,7 +11,6 @@ class Mkelurahan extends CI_Model
 		$data = [
 			'kode_lurah'   => $params['kode'],
 			'nama_lurah'   => $params['nama'],
-			'jumlah_sd'   => $params['jumlahsd'],
 		];
 		return $this->db->insert($this->tabel, $data);
 	}
@@ -25,7 +24,6 @@ class Mkelurahan extends CI_Model
 		$data = [
 			'kode_lurah'   => $params['kode'],
 			'nama_lurah'   => $params['nama'],
-			'jumlah_sd'   => $params['jumlahsd'],
 		];
 		return $this->db->where('kode_lurah', $kode)->update($this->tabel, $data);
 	}

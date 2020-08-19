@@ -37,7 +37,7 @@ class Msekolah extends CI_Model
 		$datakosong['siswa']=0;
 		$datakosong['siswi']=0;
 		$datakosong['semester']="I";
-		$datakosong['tahun']="2000";
+		$datakosong['tahun']=date("Y");
 		$this->db->insert('tb_siswasekolah', $datakosong);
 		
 		return $this->db->insert($this->tabel, $data);
