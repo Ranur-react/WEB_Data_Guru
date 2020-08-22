@@ -125,21 +125,21 @@
  -->
 						<!-- tengah plate -->
 				        <div class="col-lg-4 col-xs-6">
-				        	<div class="form-group">
+				        	<!-- <div class="form-group">
 								<label>Agama</label>
 								<!-- <input type="text" name="agama" class="form-control"> -->
-								<select class="form-control" name="agama">
+								<!-- <select class="form-control" name="agama">
 									<?php foreach ($agama as $d) : ?>
 										<option value="<?= $d; ?>"><?= $d; ?></option>
 									<?php endforeach; ?>
 								</select>
 								<span class="error agama text-red"></span>
-							</div>
-							<div class="form-group">
+							</div>  -->
+							<!-- <div class="form-group">
 								<label>Status</label>
 								<input type="text" name="status" class="form-control">
 								<span class="error status text-red"></span>
-							</div>
+							</div> -->
 							<div class="form-group">
 								<label>Jabatan</label>
 								<input type="text" name="jabatan" class="form-control">

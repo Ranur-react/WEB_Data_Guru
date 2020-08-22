@@ -44,8 +44,8 @@ class Guru extends CI_Controller
 			$this->form_validation->set_rules('tgllahir', 'Tangggal Lahir', 'required');
 			$this->form_validation->set_rules('tlp', 'Telp Guru', 'required');
 			$this->form_validation->set_rules('jenkel', 'Jenis Kelamin', 'required');
-			$this->form_validation->set_rules('agama', 'Agama', 'required');
-			$this->form_validation->set_rules('status', 'Status', 'required');
+			// $this->form_validation->set_rules('agama', 'Agama', 'required');
+			// $this->form_validation->set_rules('status', 'Status', 'required');
 			$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 			$this->form_validation->set_rules('masajabatan', 'Masa Jabatan', 'required');
 			$this->form_validation->set_rules('namadiklat', 'Nama Diklat', 'required');
@@ -91,8 +91,8 @@ class Guru extends CI_Controller
 			$this->form_validation->set_rules('tgllahir', 'Tangggal Lahir', 'required');
 			$this->form_validation->set_rules('tlp', 'Telp Guru', 'required');
 			$this->form_validation->set_rules('jenkel', 'Jenis Kelamin', 'required');
-			$this->form_validation->set_rules('agama', 'Agama', 'required');
-			$this->form_validation->set_rules('status', 'Status', 'required');
+			// $this->form_validation->set_rules('agama', 'Agama', 'required');
+			// $this->form_validation->set_rules('status', 'Status', 'required');
 			$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 			$this->form_validation->set_rules('masajabatan', 'Masa Jabatan', 'required');
 			$this->form_validation->set_rules('namadiklat', 'Nama Diklat', 'required');
