@@ -1,24 +1,54 @@
 <script>
+	$(function() {
+		$('.datepicker').datepicker({
+			autoclose: true
+		});
+		$('input[type="radio"].minimal').iCheck({
+			checkboxClass: 'icheckbox_minimal-blue',
+			radioClass: 'iradio_minimal-blue'
+		})
+	});
 
 	$(document).ready( function(e) {
-		let combohide=()=>{
-						   let a=$('.kodekepegawaian').val();
+				$('.dik2').hide();
+				$('.dik3').hide();
+				$('.dik4').hide();
+				$('.dik5').hide();
+				$('.dik6').hide();
+				$('.dik7').hide();
+				$('.dik8').hide();
+				$('.dik9').hide();
+				$('.dik10').hide();
+				// $('.namadiklat2').hide();
+
+
+
+	   	$(document).on('change', '.kodekepegawaian', function(e) {
+			   let a=$('.kodekepegawaian').val();
 			   if(a=="PG-02"){
 				$('.kodegolongan').hide();
 				$('.nosk').hide();
-				$('.kodegolongan').val("");
-				$('.nosk').val("");
+				$('.kodepangkat').hide();
+				
 			   }else{
 				$('.kodegolongan').show();
 				$('.nosk').show();
 			   
 			   }
-		}
-		combohide();
-	   	$(document).on('change', '.kodekepegawaian', function(e) {
-	   			combohide();
+
 	});
-	   	});
+	   	let num=1;
+   	$(document).on('click', '.tmbhdik', function(e) {
+			num+=1;
+			
+			$('.dik'+num).show();
+
+			   			
+
+	});
+
+	});
+
 </script>
 <div class="modal fade" id="modal_edit">
 	<!-- <div class="modal-dialog"> -->
@@ -88,21 +118,21 @@
 
 						<!-- tengah plate -->
 				        <div class="col-lg-4 col-xs-6">
-				        	<div class="form-group">
+				        	<!-- <div class="form-group">
 								<label>Agama</label>
 								<!-- <input type="text" name="agama" class="form-control"> -->
-								<select class="form-control" name="agama">
+								<!-- <select class="form-control" name="agama">
 									<?php foreach ($agama as $d) : ?>
-										<option value="<?= $d ?>"<?= $d == $data['agama_guru'] ? 'selected' : null ?>><?= $d ?></option>
+										<option value="<?= $d; ?>"><?= $d; ?></option>
 									<?php endforeach; ?>
 								</select>
 								<span class="error agama text-red"></span>
-							</div>
-							<div class="form-group">
+							</div>  -->
+							<!-- <div class="form-group">
 								<label>Status</label>
-								<input type="text" name="status" class="form-control" value="<?= $data['status_guru'] ?>">
+								<input type="text" name="status" class="form-control">
 								<span class="error status text-red"></span>
-							</div>
+							</div> -->
 							<div class="form-group">
 								<label>Jabatan</label>
 								<input type="text" name="jabatan" class="form-control" value="<?= $data['jabatan_guru'] ?>">
@@ -114,50 +144,146 @@
 								<span class="error masajabatan text-red"></span>
 							</div>
 
-														<div class="col-lg-6 col-xs-6">
+
+							<div class="col-lg-6 col-xs-6">
 								<div class="form-group">
 									<label>Nama Diklat I</label>
-									<input type="text" value="<?= $data['nama_diklat_guru'] ?>" name="namadiklat" class="form-control">
+									<input type="text" name="namadiklat" class="form-control" value="<?= $data['nama_diklat_guru'] ?>">
 									<span class="error namadiklat text-red"></span>
 								</div>
 							</div>
 							<div class="col-lg-6 col-xs-6">
 					        	<div class="form-group">
 									<label>Tahun Diklat I</label>
-									<input type="text" value="<?= $data['thn_diklat_guru'] ?>" name="thndiklat" class="form-control">
-									<span class="error thndiklat text-red"></span>
-								</div>
-							</div>
-								<div class="col-lg-6 col-xs-6">
-								<div class="form-group">
-									<label>Nama Diklat II</label>
-									<input type="text" value="<?= $data['nama_diklat_guru2'] ?>" name="namadiklat2" class="form-control">
-									<span class="error namadiklat2 text-red"></span>
-								</div>
-							</div>
-							<div class="col-lg-6 col-xs-6">
-					        	<div class="form-group">
-									<label>Tahun Diklat II</label>
-									<input type="text" value="<?= $data['thn_diklat_guru2'] ?>" name="thndiklat2" class="form-control">
-									<span class="error thndiklat2 text-red"></span>
-								</div>
-							</div>
-								<div class="col-lg-6 col-xs-6">
-								<div class="form-group">
-									<label>Nama Diklat III</label>
-									<input type="text" value="<?= $data['nama_diklat_guru3'] ?>" name="namadiklat3" class="form-control">
-									<span class="error namadiklat3 text-red"></span>
-								</div>
-							</div>
-							<div class="col-lg-6 col-xs-6">
-					        	<div class="form-group">
-									<label>Tahun Diklat III</label>
-									<input type="text" value="<?= $data['thn_diklat_guru3'] ?>" name="thndiklat3" class="form-control">
-									<span class="error thndiklat3 text-red"></span>
+									<input type="text" name="thndiklat" class="form-control thndiklat" multiple value="<?= $data['thn_diklat_guru'] ?>">
 								</div>
 							</div>
 
+								<div class="col-lg-6 col-xs-6 dik2">
+								<div class="form-group">
+									<label>Nama Diklat II</label>
+									<input type="text" name="namadiklat2" class="form-control" value="<?= $data['nama_diklat_guru2'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik2">
+					        	<div class="form-group">
+									<label>Tahun Diklat II</label>
+									<input type="text" name="thndiklat2" class="form-control" value="<?= $data['thn_diklat_guru2'] ?>">
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6 dik3">
+								<div class="form-group">
+									<label>Nama Diklat III</label>
+									<input type="text" name="namadiklat3" class="form-control" value="<?= $data['nama_diklat_guru3'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik3">
+					        	<div class="form-group">
+									<label>Tahun Diklat III</label>
+									<input type="text" name="thndiklat3" class="form-control" value="<?= $data['thn_diklat_guru3'] ?>">
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6 dik4">
+								<div class="form-group">
+									<label>Nama Diklat IV</label>
+									<input type="text" name="namadiklat4" class="form-control" value="<?= $data['nama_diklat_guru4'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik4">
+					        	<div class="form-group">
+									<label>Tahun Diklat IV</label>
+									<input type="text" name="thndiklat4" class="form-control" value="<?= $data['thn_diklat_guru4'] ?>">
+								</div>
+							</div>
+
+								<div class="col-lg-6 col-xs-6 dik5">
+								<div class="form-group">
+									<label>Nama Diklat V</label>
+									<input type="text" name="namadiklat5" class="form-control" value="<?= $data['nama_diklat_guru5'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik5">
+					        	<div class="form-group">
+									<label>Tahun Diklat V</label>
+									<input type="text" name="thndiklat5" class="form-control" value="<?= $data['thn_diklat_guru5'] ?>">
+								</div>
+							</div>
+
+								<div class="col-lg-6 col-xs-6 dik6">
+								<div class="form-group">
+									<label>Nama Diklat VI</label>
+									<input type="text" name="namadiklat6" class="form-control" value="<?= $data['nama_diklat_guru6'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik6">
+					        	<div class="form-group">
+									<label>Tahun Diklat VI</label>
+									<input type="text" name="thndiklat6" class="form-control" value="<?= $data['thn_diklat_guru6'] ?>">
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6 dik7">
+								<div class="form-group">
+									<label>Nama Diklat VII</label>
+									<input type="text" name="namadiklat7" class="form-control" value="<?= $data['nama_diklat_guru7'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik7">
+					        	<div class="form-group">
+									<label>Tahun Diklat VII</label>
+									<input type="text" name="thndiklat7" class="form-control" value="<?= $data['thn_diklat_guru7'] ?>">
+								</div>
+							</div>
+
+								<div class="col-lg-6 col-xs-6 dik8">
+								<div class="form-group">
+									<label>Nama Diklat VIII</label>
+									<input type="text" name="namadiklat8" class="form-control" value="<?= $data['nama_diklat_guru8'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik8">
+					        	<div class="form-group">
+									<label>Tahun Diklat VIII</label>
+									<input type="text" name="thndiklat8" class="form-control" value="<?= $data['thn_diklat_guru8'] ?>">
+								</div>
+							</div>
+								<div class="col-lg-6 col-xs-6 dik9">
+								<div class="form-group">
+									<label>Nama Diklat IX</label>
+									<input type="text" name="namadiklat9" class="form-control" value="<?= $data['nama_diklat_guru9'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik9">
+					        	<div class="form-group">
+									<label>Tahun Diklat IX</label>
+									<input type="text" name="thndiklat9" class="form-control" value="<?= $data['thn_diklat_guru9'] ?>">
+								</div>
+							</div>
+
+								<div class="col-lg-6 col-xs-6 dik10">
+								<div class="form-group">
+									<label>Nama Diklat X</label>
+									<input type="text" name="namadiklat10" class="form-control" value="<?= $data['nama_diklat_guru10'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-6 col-xs-6 dik10">
+					        	<div class="form-group">
+									<label>Tahun Diklat X</label>
+									<input type="text" name="thndiklat10" class="form-control" value="<?= $data['thn_diklat_guru10'] ?>">
+								</div>
+							</div>
+							<div class="col-lg-3 col-xs-6"></div>
+							<div class="col-lg-3 col-xs-6">
+
+								<a class="btn bg-yellow tmbhdik"><i  class="icon-plus3"></i>  Tambah Diklat+</a>
+							</div>
+<!-- 							<div class="form-group">
+								<label>Nama Diklat</label>
+								<input type="text" name="namadiklat" class="form-control">
+								<span class="error namadiklat text-red"></span>
+							</div> -->
+
 				        </div>
+						<!--/end tengah plate -->
 
 <div class="col-lg-4 col-xs-6">
 							<div class="form-group">

@@ -31,15 +31,15 @@
 	<thead>
 		<tr>
 			<th  width="5%">No.</th>
-			<th width="15%">Kode Sekolah</th>
 			<th width="20%">Nama Sekolah</th>
+			<th width="15%">Nama Kepsek</th>
 			<th width="20%">Alamat Sekolah</th>
 			<th width="15%">Telp Sekolah</th>
 			<th width="12%">Jml.Guru Honor</th>
 			<th width="12%">Jml.Guru PNS</th>
 			<th width="15%">Jml.Siswa Laki-Laki</th>
 			<th width="15%">Jml.Siswi Perempuan</th>
-			<th width="15%">Kode Kelurahan</th>
+			<th width="15%">Nama Kelurahan</th>
 			
 			
 		</tr>
@@ -53,8 +53,8 @@
 						foreach ($data as $d) { ?>
 						<tr>
 								<td class="text-center" width="40px"><?= $no . '.'; ?></td>
-									<td><?= $d['nama_lurah'] ?></td>
 								<td><?= $d['nama_sekolah'] ?></td>
+								<td><?= $d['nama_kepsek'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>
 								<?php $dhonor=$this->Msekolah->hitunghonor($d['kode_sekolah']) ?>

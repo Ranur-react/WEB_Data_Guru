@@ -12,18 +12,18 @@
 					<div class="col-lg-1 col-xs-6">
 						<div style="height: 7px"></div>
     					<div class="form-group">
-							<label>Kode Kelurahan</label>
+							<label>Kelurahan</label>
 						</div>
 						<div style="height: 7px"></div>
     					<div class="form-group">
-							<label>Kode Sekolah</label>
+							<label> Sekolah</label>
 						</div>	
 					</div>
 					<div class="col-lg-3 col-xs-6">
     					<div class="form-group">
 							<select class="form-control kodelurah" name="kodelurah">
 						<?php foreach ($dlurah as $d) : ?>
-							<option value="<?= $d['kode_lurah']; ?>"><?= $d['kode_lurah']."-". $d['nama_lurah']; ?></option>
+							<option value="<?= $d['kode_lurah']; ?>"><?=  $d['nama_lurah']; ?></option>
 						<?php endforeach; ?>
 					</select>
 					
@@ -31,7 +31,7 @@
 						<div class="form-group">
 							<select class="form-control kodsekolah" name="kodsekolah">
 						<?php foreach ($dsekolah as $d) : ?>
-							<option value="<?= $d['kode_sekolah']; ?>"><?= $d['kode_sekolah']."-". $d['nama_sekolah']; ?></option>
+							<option value="<?= $d['kode_sekolah']; ?>"><?=  $d['nama_sekolah']; ?></option>
 						<?php endforeach; ?>
 					</select>
 						</div>

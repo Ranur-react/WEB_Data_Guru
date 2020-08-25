@@ -4,6 +4,7 @@
 							<th class="text-center">No.</th>
 							<th>Kode Sekolah</th>
 							<th>Nama Sekolah</th>
+							<th>Nama Kepsek</th>
 							<th>Alamat Sekolah</th>
 							<th>No Telpon</th>
 							<th>Jumlah Guru Honor</th>
@@ -23,6 +24,7 @@
 								<td class="text-center" width="40px"><?= $no . '.'; ?></td>
 								<td><?= $d['kode_sekolah'] ?></td>
 								<td><?= $d['nama_sekolah'] ?></td>
+								<td><?= $d['nama_kepsek'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>
 								<?php $dhonor=$this->Msekolah->hitunghonor($d['kode_sekolah']) ?>

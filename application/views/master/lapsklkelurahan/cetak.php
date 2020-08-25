@@ -17,14 +17,14 @@
 	<h3 align="center">Kota Padang</h3>
 <table align="center" width="60%" border="0">
 	<tr>
-		<td width="20%">Kode Sekolah</td>
-		<td align="right" width="20%">: <?= $dsekolah['kode_sekolah']; ?></td>
+		<td width="20%">Sekolah</td>
+		<td align="right" width="40%">: <?= $dsekolah['nama_sekolah']; ?></td>
 		<td align="right" width="60%"> </td>
 	</tr>
 		<tr>
-		<td width="20%">Kode Kelurahan</td>
-		<td align="right" width="20%">: <?= $dlurah['kode_lurah']; ?></td>
-		<td align="right" width="60%"> </td>
+		<td width="20%"> Kelurahan</td>
+		<td align="right" width="40%">: <?= $dlurah['nama_lurah']; ?></td>
+		<td align="right" width="40%"> </td>
 	</tr>
 </table>
 <table align="center" width="60%" border="1">
@@ -33,6 +33,7 @@
 			<th  width="5%">No.</th>
 			<th width="15%">Kode Sekolah</th>
 			<th width="20%">Nama Sekolah</th>
+			<th width="20%">Nama Kepsek</th>
 			<th width="20%">Alamat Sekolah</th>
 			<th width="15%">Telp Sekolah</th>
 			<th width="12%">Jml.Guru Honor</th>
@@ -56,6 +57,7 @@
 								<td width="40px"><?= $no . '.'; ?></td>
 								<td><?= $d['kode_sekolah'] ?></td>
 								<td><?= $d['nama_sekolah'] ?></td>
+								<td><?= $d['nama_kepsek'] ?></td>
 								<td><?= $d['alamat_sekolah'] ?></td>
 								<td><?= $d['telp_sekolah'] ?></td>
 								<?php $dhonor=$this->Msekolah->hitunghonor($d['kode_sekolah']) ?>

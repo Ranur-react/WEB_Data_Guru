@@ -57,9 +57,6 @@ class Pendguru extends CI_Controller
 	{
 		if ($this->input->is_ajax_request() == TRUE) {
 			$this->form_validation->set_rules('nippend', 'NIP Pend Guru', 'required');
-			$this->form_validation->set_rules('instansi', 'Instansi', 'required');
-			$this->form_validation->set_rules('prodi', 'Prodi', 'required');
-			$this->form_validation->set_rules('thnlulus', 'Tahun Lulus', 'required');
 			$this->form_validation->set_message('required', '%s tidak boleh kosong');
 			if ($this->form_validation->run() == TRUE) {
 				$params = $this->input->post(null, TRUE);
