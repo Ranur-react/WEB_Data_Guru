@@ -28,10 +28,10 @@ class Lapsekolahkelurahan extends CI_Controller
 	}
 	public function tabel_kode()
 	{
-		$kode_sekolah = $this->input->post('sekolah');
+	
 		$kode_lurah = $this->input->post('lurah');
 		$data=[
-			'data'  => $this->Mlapsekolahkelurahan->tampildata_kode($kode_sekolah,$kode_lurah),
+			'data'  => $this->Mlapsekolahkelurahan->tampildata_kode($kode_lurah),
 			'dlurah'=>$this->Mkelurahan->getall(),
 			'dsekolah'=>$this->Msekolah->getall()
 		];
@@ -56,7 +56,7 @@ class Lapsekolahkelurahan extends CI_Controller
 	$kode_sekolah = $this->uri->segment(4);
 	$kode_lurah = $this->uri->segment(5);
 		$data=[
-			'data'  => $this->Mlapsekolahkelurahan->tampildata_kode($kode_sekolah,$kode_lurah),
+			'data'  => $this->Mlapsekolahkelurahan->tampildata_kode($kode_lurah),
 			'dlurah'=>$this->Mkelurahan->shows($kode_lurah),
 			'dsekolah'=>$this->Msekolah->shows($kode_sekolah)
 		];

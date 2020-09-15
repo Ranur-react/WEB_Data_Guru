@@ -80,7 +80,7 @@
 					</tbody>
 	<tfoot>
 						<th>
-							<td colspan="4" align="right">
+							<td colspan="5" align="right">
 								<b>Total</b> 
 							</td>	
 							<td>

@@ -47,7 +47,7 @@
 					</tbody>
 					<tfoot>
 						<th>
-							<td colspan="4" align="center">
+							<td colspan="5" align="center">
 								<b>Total</b> 
 							</td>	
 							<td>

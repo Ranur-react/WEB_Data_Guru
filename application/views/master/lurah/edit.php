@@ -20,11 +20,7 @@
 					<span class="error nama text-red"></span>
 				</div>
 
-				<div class="form-group">
-					<label>Jumlah SD</label>
-					<input type="text" name="jumlahsd" class="form-control" value="<?= $data['jumlah_sd'] ?>">
-					<span class="error jumlahsd text-red"></span>
-				</div>
+
 			</div>
 			<div class="modal-footer">
 				<button type="submit" class="btn btn-primary btnUpdate"><i class="icon-floppy-disk"></i> Update</button>

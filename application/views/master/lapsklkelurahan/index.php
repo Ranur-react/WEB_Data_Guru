@@ -9,13 +9,13 @@
 				<center><h4><b>Kecamatan Padang Timur</b></h4></center>
 				<center><h4><b>Kota Padang</b></h4></center>
 				<hr>
-					<div class="col-lg-1 col-xs-6">
+					<div class="col-lg-1 col-xs-6 ">
 						<div style="height: 7px"></div>
     					<div class="form-group">
 							<label>Kelurahan</label>
 						</div>
 						<div style="height: 7px"></div>
-    					<div class="form-group">
+    					<div class="form-group hidden">
 							<label> Sekolah</label>
 						</div>	
 					</div>
@@ -28,7 +28,7 @@
 					</select>
 					
 						</div>
-						<div class="form-group">
+						<div class="form-group hidden">
 							<select class="form-control kodsekolah" name="kodsekolah">
 						<?php foreach ($dsekolah as $d) : ?>
 							<option value="<?= $d['kode_sekolah']; ?>"><?=  $d['nama_sekolah']; ?></option>
@@ -54,7 +54,7 @@
 		$('.kodsekolah').select2();
 		$('.kodelurah').select2();
 
-	let kode= "&sekolah=" +$('.kodsekolah').val()+"&lurah=" +$('.kodelurah').val();
+	let kode= "&lurah=" +$('.kodelurah').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lapsekolahkelurahan/tabel_kode')  ?>',
                     type: "post",
@@ -68,7 +68,7 @@
                 });
 
  	$(document).on('change', '.kodelurah', function(e) {
- 		let kode= "&sekolah=" +$('.kodsekolah').val()+"&lurah=" +$('.kodelurah').val();
+ 		let kode= "&lurah=" +$('.kodelurah').val();
 	          $.ajax({
                     url: '<?= site_url('master/Lapsekolahkelurahan/tabel_kode')  ?>',
                     type: "post",
@@ -82,20 +82,7 @@
                 });
 
 	});
-	   	$(document).on('change', '.kodsekolah', function(e) {
-	   		let kode= "&sekolah=" +$(this).val()+"&lurah=" +$('.kodelurah').val();
-	          $.ajax({
-                    url: '<?= site_url('master/Lapsekolahkelurahan/tabel_kode')  ?>',
-                    type: "post",
-                    data: kode,
-                    cache: false,
-                    success: function(response) {
-                    	$('.tampil_tabel').html('');
-                    	$('.tampil_tabel').html(response);
-                    }
-                });
-
-	});
+	   	
 	   		$(document).on('click', '.cetak', function(e) {
                         
 
